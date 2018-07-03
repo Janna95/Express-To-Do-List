@@ -52,9 +52,15 @@ app.post('/edit/:id', (req, res) => {
     res.redirect('/')
 })
 
-
 app.post('/delete/:id', (req, res) => {
-    toDoList.splice(req.params.id, 1);
+    
+    console.log(toDoList)
+    let current_id = + (req.params.id);
+    let obj = toDoList.find((obj) => obj.id === current_id )
+    let index = toDoList.indexOf(obj);
+    toDoList.splice(index, 1)
+    console.log(toDoList, index, current_id)
+
     res.redirect('/')
 }) 
 

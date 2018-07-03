@@ -9,7 +9,7 @@ block content
     div
         if toDoList
             each todo in toDoList
-                div(style="height: 5vh; width: 80vw; background-color: lightgrey; margin: 2px")
+                div(style="height: 4vh; width: 30vw; background-color: lightgrey; margin: 2px")
                     div(style="display: flex;justify-content: space-between")= todo.input  
                         div(style="display: flex")
                             form(action="/edit/" + todo.id method="get")
