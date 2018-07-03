@@ -1,0 +1,19 @@
+extends layout.pug
+
+block content
+    h1 Create Your To Do List
+    pre(style="color: red;")= msg
+    form(action="/" method="post")
+        input(type="text" name="input")
+        button(id="create" type="submit") Create 
+    div
+        if toDoList
+            each todo in toDoList
+                div(style="height: 5vh; width: 80vw; background-color: lightgrey; margin: 2px")
+                    div(style="display: flex;justify-content: space-between")= todo.input  
+                        div(style="display: flex")
+                            form(action="/edit/" + todo.id method="get")
+                                button(id="edit" type="submit") Edit
+                            form(action="/delete/" + todo.id  method="post")
+                                button(id= "#{todo.id}" type="submit") Delete
+                

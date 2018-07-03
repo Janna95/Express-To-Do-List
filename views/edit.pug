@@ -1,0 +1,7 @@
+extends layout.pug
+
+block content
+    h3 Edit current todo
+    form(action="/edit/" + id method="post")
+        input(type="text" name="edited")
+        button(id="save" type="submit") Save 
